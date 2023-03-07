@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 export const useFecthItems = (url) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const fecthData = async (url) => {
@@ -14,6 +14,7 @@ export const useFecthItems = (url) => {
 
   useEffect(() => {
     fecthData(url);
+    console.log(data);
   }, []);
 
   return { data, loading };

@@ -1,0 +1,16 @@
+.card_details {
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-between;
+  text-align: left;
+  color: #304354;
+}
+
+.card_details p,
+.card_details span {
+  font-weight: bold;
+}

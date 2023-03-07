@@ -14,8 +14,6 @@ const Navbar = () => {
       </div>
       <div className={styles.links_container}>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/movie/1">Movie</NavLink>
-        <NavLink to="/search/movie">Search</NavLink>
       </div>
       <form>
         <input type="text" placeholder="Busque por um filme..." />
