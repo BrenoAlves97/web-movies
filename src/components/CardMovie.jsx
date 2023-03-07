@@ -14,7 +14,9 @@ const CardMovie = ({ movie, showLink = true }) => {
         <AiFillStar className={styles.icon} />
         <p>{item.vote_average}</p>
       </div>
-      <Link to={`movie/${item.id}`}>Detalhes...</Link>
+      <Link className={styles.link_btn} to={`movie/${item.id}`}>
+        Detalhes...
+      </Link>
     </div>
   ));
 };
