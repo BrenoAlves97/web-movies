@@ -1,0 +1,6 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+  background-image: linear-gradient(to top, #958795, #7d7586, #636376, #4a5366, #304354);
+}

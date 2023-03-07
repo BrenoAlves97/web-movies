@@ -1,0 +1,38 @@
+.card_container {
+  width: 100%;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: left;
+  color: #fff;
+  overflow: hidden;
+}
+
+.card_container img {
+  width: 100%;
+  transition: 0.5s;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.card_container img:hover {
+  transform: scale(1.01);
+  opacity: 1;
+}
+
+.card_container h3 {
+  font-size: 1.6rem;
+}
+
+.average_container {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.average_container .icon {
+  color: #f9f871;
+}
