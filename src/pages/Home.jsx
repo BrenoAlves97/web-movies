@@ -15,7 +15,6 @@ const Home = () => {
 
   return (
     <div className={styles.home_container}>
-      {/* <h2>Melhores filmes...</h2> */}
       {loading && <Spinner />}
       {!items && <Spinner />}
       {items && <CardMovie movie={items} />}

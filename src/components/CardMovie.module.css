@@ -9,6 +9,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 950px) {
+  .card_container {
+    gap: 0.5rem;
+  }
+}
+
 .card_container img {
   width: 100%;
   transition: 0.5s;
@@ -22,8 +28,14 @@
 }
 
 .card_container h3 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding: 0.5rem;
+}
+
+@media (max-width: 950px) {
+  .card_container h3 {
+    font-size: 1rem;
+  }
 }
 
 .average_container {
@@ -32,6 +44,12 @@
   gap: 0.3rem;
   font-size: 1.3rem;
   font-weight: bold;
+}
+
+@media (max-width: 950px) {
+  .average_container {
+    font-size: 0.9rem;
+  }
 }
 
 .average_container .icon {
@@ -51,6 +69,12 @@
   border: 2px solid transparent;
   transition: 0.5s;
   outline: none;
+}
+
+@media (max-width: 930px) {
+  .link_btn {
+    font-size: 0.9rem;
+  }
 }
 
 .link_btn:hover {

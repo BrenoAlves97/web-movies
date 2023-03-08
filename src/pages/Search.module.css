@@ -23,3 +23,23 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 1rem;
 }
+
+@media (max-width: 950px) {
+  .search_container {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search_container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 3rem;
+  }
+}
+
+@media (max-width: 428px) {
+  .search_container {
+    grid-template-columns: 1fr;
+    padding: 1rem 3rem;
+  }
+}

@@ -8,7 +8,19 @@
   justify-content: space-between;
   text-align: left;
   color: #304354;
-  padding: 1rem;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .card_details {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 620px) {
+  .card_details {
+    max-width: 468px;
+  }
 }
 
 .card_details img {
@@ -32,11 +44,17 @@
   font-size: 1.7rem;
 }
 
+@media (max-width: 620px) {
+  .title {
+    font-size: 1.4rem;
+  }
+}
+
 .about_movie_container {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  line-height: 1.3rem;
+  line-height: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
