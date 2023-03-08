@@ -8,9 +8,40 @@
   justify-content: space-between;
   text-align: left;
   color: #304354;
+  padding: 1rem;
+}
+
+.card_details img {
+  width: 100%;
+  transition: 0.5s;
+  overflow: hidden;
+  opacity: 0.8;
+  border-radius: 0.2rem;
+}
+
+.card_details img:hover {
+  opacity: 1;
 }
 
 .card_details p,
 .card_details span {
   font-weight: bold;
+}
+
+.title {
+  font-size: 1.7rem;
+}
+
+.about_movie_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  line-height: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.release_time_infos_container {
+  display: flex;
+  gap: 0.3rem;
+  flex-direction: column;
 }

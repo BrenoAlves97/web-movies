@@ -7,9 +7,3 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem 1rem;
 }
-
-/* .home_container h2 {
-  text-align: center;
-  font-size: 2.3rem;
-  color: #ffc058;
-} */

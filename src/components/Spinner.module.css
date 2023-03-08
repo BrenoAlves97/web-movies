@@ -1,0 +1,19 @@
+.spinner {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 8px solid transparent;
+  border-top-color: #f9f871;
+  animation: 0.8s rotate infinite forwards;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

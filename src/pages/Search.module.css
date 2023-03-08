@@ -1,0 +1,25 @@
+.title_search {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #eee;
+}
+
+.title_search span {
+  color: #f9f871;
+  opacity: 0.8;
+  transition: 0.5s;
+}
+
+.title_search span:hover {
+  opacity: 1;
+}
+
+.search_container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 1rem;
+}

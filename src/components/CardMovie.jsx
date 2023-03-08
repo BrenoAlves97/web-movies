@@ -12,11 +12,13 @@ const CardMovie = ({ movie, showLink = true }) => {
       <h3>{item.title}</h3>
       <div className={styles.average_container}>
         <AiFillStar className={styles.icon} />
-        <p>{item.vote_average}</p>
+        <p>{item.vote_average.toFixed(1)}</p>
       </div>
-      <Link className={styles.link_btn} to={`movie/${item.id}`}>
-        Detalhes...
-      </Link>
+      {showLink && (
+        <Link className={styles.link_btn} to={`/movie/${item.id}`}>
+          Detalhes...
+        </Link>
+      )}
     </div>
   ));
 };
