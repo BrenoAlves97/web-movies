@@ -17,7 +17,7 @@ Informações como: Título do filme, sinopse, avalição, receita, orçamento e
 
 ## Home
 
-![image](../WebMovies/public/images/home.jpg)
+![image](./public/images/home.jpg)
 
 ## Movie 1° Parte
 
