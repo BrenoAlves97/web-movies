@@ -15,18 +15,4 @@ Informações como: Título do filme, sinopse, avalição, receita, orçamento e
 - Vite
 - ReactJS
 
-## Home:
 
-![image](./public/images/home.jpg)
-
-## Movie 1° Parte:
-
-![image](./public/images/movieInfo.jpg)
-
-## Movie 2° Parte:
-
-![image](./public/images/movieInfos.jpg)
-
-## Search:
-
-![image](./public/images/search.jpg)
