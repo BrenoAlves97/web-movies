@@ -1,9 +1,13 @@
 ## Projeto WebMovies
 
-Consiste em um site que trazem CARDs de filmes com informações sobre eles.<br>
-Em sua página inicial são os filmes com a classificação mais alta, porém o usuário poderá pesquisar através da barra de navegação, o filme que é de seu interesse.
+Consiste em uma SPA que trazem CARDs de filmes com informações sobre eles.<br>
+Em sua página inicial (HOME) são os filmes com a classificação mais alta. O usuário poderá buscar sobre filmes especifícos através da barra de navegação.<br>
+Para acessa-las, apenas clicar em detalhes, informações como:
 
-Informações como: Título do filme, sinopse, avalição, receita, orçamento etc...
+- Receita
+- Avaliação
+- Sinopse
+- Orçamento, etc...
 
 ## API
 
@@ -14,5 +18,3 @@ Informações como: Título do filme, sinopse, avalição, receita, orçamento e
 - HTML/CSS
 - Vite
 - ReactJS
-
-
