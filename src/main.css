@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Configurações globais css */
+body,
+html,
+#root {
+   width: 100%;
+   min-height: 100vh;
+   overflow-x: hidden;
+   display: flex;
+   flex-direction: column;
+   background: #09090b;
+}
