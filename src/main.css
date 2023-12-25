@@ -13,3 +13,17 @@ html,
    flex-direction: column;
    background: #09090b;
 }
+
+::-webkit-scrollbar {
+   width: 8px;
+}
+
+::-webkit-scrollbar-track {
+   background: #27272a;
+}
+
+::-webkit-scrollbar-thumb {
+   background: #f4f4f5;
+   border-radius: 1rem;
+   border: 2px solid #27272a;
+}
