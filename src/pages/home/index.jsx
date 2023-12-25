@@ -24,7 +24,7 @@ export const Home = () => {
 
    return (
       <Container hScreen={true}>
-         <Subtitle textCenter={true}>Melhores filmes</Subtitle>
+         <Subtitle textCenter={true}>Mais Populares</Subtitle>
 
          <section className="grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-3">
             {data && !loading && data.map((movie) => <Card key={movie.id} movie={movie} />)}

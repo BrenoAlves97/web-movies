@@ -1,20 +1,11 @@
-## Projeto WebMovies
+## Web Movies
 
-Consiste em uma SPA que trazem CARDs de filmes com informações sobre eles.<br>
-Em sua página inicial (HOME) são os filmes com a classificação mais alta. O usuário poderá buscar sobre filmes especifícos através da barra de navegação.<br>
-Para acessa-las, apenas clicar em detalhes, informações como:
+O projeto "web-movies" incorpora uma abordagem para fornecer informações sobre filmes. Utilizando cards interativos durante a navegação, os usuários têm acesso a detalhes cruciais, como sinopse, elenco, curiosidades, etc. Essa proposta visa criar uma experiência, permitindo aos usuários explorar informações adicionais de maneira personalizada, proporcionando uma experiência informativa durante a interação com o conteúdo cinematográfico.
 
-- Receita
-- Avaliação
-- Sinopse
-- Orçamento, etc...
+### Tecnologias:
+-  React.js
+-  Vite
+-  Tailwindcss
 
-## API
-
+### API:
 - The Movie DataBase
-
-## Tecnologias:
-
-- HTML/CSS
-- Vite
-- ReactJS
