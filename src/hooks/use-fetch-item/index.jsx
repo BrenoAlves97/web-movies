@@ -11,7 +11,6 @@ export const UseFetchItems = (url, config) => {
             if (!res.ok) return console.log('Houve algum erro');
             const json = await res.json();
             setData(json.results);
-            console.log(json.results);
          } catch (error) {
             console.log('Error: ', error);
          } finally {

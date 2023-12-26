@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { Loading } from '../utilities/loading';
 
 const limitText = (text) => {
@@ -8,21 +10,22 @@ const limitText = (text) => {
 };
 
 export const Card = ({ movie }) => {
-   const handleNavigate = (item) => {
-      console.log(item);
-   };
-
    const [images, setImages] = React.useState([]);
+   const navigate = useNavigate();
 
    const handleLoadImages = (url) => {
       setImages((prev) => [...prev, url]);
+   };
+
+   const handleDetails = (id) => {
+      return navigate(`/detalhes/${id}`, { replace: true });
    };
 
    return (
       <div
          className="w-full bg-zinc-800 flex flex-col border-2 border-zinc-500 
                      rounded-md overflow-hidden max-w-xs cursor-pointer hover:border-zinc-50 duration-200 group"
-         onClick={() => handleNavigate(movie)}
+         onClick={() => handleDetails(movie.id)}
       >
          <div className="h-96 mb-2 overflow-hidden rounded-md bg-zinc-500">
             <div
