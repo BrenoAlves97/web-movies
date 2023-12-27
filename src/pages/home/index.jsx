@@ -11,11 +11,11 @@ import { CustomInput } from '../../components/custom-input';
 import { UseFetchItems } from '../../hooks/use-fetch-item';
 import { apiConfig } from '../../config/api-config.js';
 
-const key = import.meta.env.VITE_APP_KEY;
-const token = import.meta.env.VITE_APP_TOKEN;
-const popular = import.meta.env.VITE_APP_POPULAR;
+import { api } from '../../api-config/index.js';
 
 export const Home = () => {
+   const { key, token, popular } = api;
+
    const { data, loading } = UseFetchItems(`${popular}?api_key=${key}&language=pt-br&page=1`, apiConfig('GET', token));
 
    const [input, setInput] = React.useState('');
@@ -38,7 +38,7 @@ export const Home = () => {
       );
 
    return (
-      <Container hScreen={true}>
+      <Container hScreen={true} pt={true}>
          <CustomInput
             placeholder="Busque por um filme..."
             type="text"

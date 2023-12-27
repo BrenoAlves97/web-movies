@@ -8,10 +8,12 @@ import { UseFetchDetails } from '../../hooks/use-fetch-details';
 import { apiConfig } from '../../config/api-config.js';
 import { MovieDetails } from '../../components/movie-details/index.jsx';
 
-const token = import.meta.env.VITE_APP_TOKEN;
+import { api } from '../../api-config/index.js';
 
 export const Detail = () => {
    const { id } = useParams();
+
+   const { token } = api;
 
    const { data, loading } = UseFetchDetails(id, apiConfig('GET', token));
 

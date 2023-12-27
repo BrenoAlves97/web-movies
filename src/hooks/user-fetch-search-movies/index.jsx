@@ -1,16 +1,17 @@
 import React from 'react';
 
-const searchUrl = import.meta.env.VITE_APP_SEARCH;
-const key = import.meta.env.VITE_APP_KEY;
+import { api } from '../../api-config/index.js';
 
 export const UserSearchMovies = (movie, config) => {
    const [data, setData] = React.useState([]);
    const [loading, setLoading] = React.useState(true);
 
+   const { key, search } = api;
+
    React.useEffect(() => {
       const searcMovies = async () => {
          try {
-            const res = await fetch(`${searchUrl}?query=${movie}&api_key=${key}&language=pt_br`, config);
+            const res = await fetch(`${search}?query=${movie}&api_key=${key}&language=pt_br`, config);
             if (!res.ok) return;
             const json = await res.json();
             console.log(json);

@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 /* Configurações globais css */
+hmtl,
 body,
-html,
 #root {
    width: 100%;
    min-height: 100vh;
@@ -15,7 +15,7 @@ html,
 }
 
 ::-webkit-scrollbar {
-   width: 8px;
+   width: 10px;
 }
 
 ::-webkit-scrollbar-track {

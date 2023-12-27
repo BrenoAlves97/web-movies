@@ -6,7 +6,15 @@ import { router } from './routes';
 export const App = () => {
    return (
       <>
-         <Toaster position="top-center" reverseOrder={false} />
+         <Toaster
+            position="top-center"
+            reverseOrder={false}
+            toastOptions={{
+               style: {
+                  fontSize: '14px',
+               },
+            }}
+         />
          <RouterProvider router={router} />
       </>
    );

@@ -1,11 +1,12 @@
 import React from 'react';
 
-const url = import.meta.env.VITE_APP_MOVIE;
-const key = import.meta.env.VITE_APP_KEY;
+import { api } from '../../api-config/index.js';
 
 export const UseFetchDetails = (id, config) => {
    const [data, setData] = React.useState(null);
    const [loading, setLoading] = React.useState(true);
+
+   const { key, movie: url } = api;
 
    React.useEffect(() => {
       const fetchMovie = async () => {

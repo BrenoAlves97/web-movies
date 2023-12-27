@@ -8,12 +8,13 @@ import { Container } from '../../components/utilities/container';
 import { Loading } from '../../components/utilities/loading';
 
 import { apiConfig } from '../../config/api-config.js';
-
-const token = import.meta.env.VITE_APP_TOKEN;
+import { api } from '../../api-config/index.js';
 
 export const Search = () => {
    const params = new URL(document.location).searchParams;
    const movie = params.get('movie');
+
+   const { token } = api;
 
    if (!movie) return;
 
