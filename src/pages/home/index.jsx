@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 import { Container } from '../../components/utilities/container';
 import { Subtitle } from '../../components/utilities/subtitle';
@@ -18,13 +19,15 @@ export const Home = () => {
    const { data, loading } = UseFetchItems(`${popular}?api_key=${key}&language=pt-br&page=1`, apiConfig('GET', token));
 
    const [input, setInput] = React.useState('');
+   const navigate = useNavigate();
 
    const handleInputValue = () => setInput('');
 
    const handleSearch = () => {
       if (input === '') return toast.error('Digite o nome de algum filme...');
-      console.log(input);
+
       handleInputValue();
+      return navigate(`/search?movie=${input}`);
    };
 
    if (loading)
