@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Image } from 'lucide-react';
 
 import { Loading } from '../utilities/loading';
 
@@ -28,27 +29,39 @@ export const Card = ({ movie }) => {
          onClick={() => handleDetails(movie.id)}
       >
          <div className="h-96 mb-2 overflow-hidden rounded-md bg-zinc-500">
-            <div
-               className="w-full h-full flex items-center justify-center"
-               style={{
-                  display: `${
-                     !images.includes(`https://image.tmdb.org/t/p/w500/${movie.poster_path}`) ? 'flex' : 'none'
-                  }`,
-               }}
-            >
-               <Loading size={20} color="#27272a" />
-            </div>
-            <img
-               style={{
-                  display: `${
-                     images.includes(`https://image.tmdb.org/t/p/w500/${movie.poster_path}`) ? 'block' : 'none'
-                  }`,
-               }}
-               src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-               alt={`${movie.title}`}
-               className="w-full object-fill object-center h-full hover:scale-105 duration-200"
-               onLoad={() => handleLoadImages(`https://image.tmdb.org/t/p/w500/${movie.poster_path}`)}
-            />
+            {!movie.poster_path && (
+               <div className="w-full h-full flex items-center justify-center bg-zinc-600">
+                  <Image size={50} color="#a1a1aa" />
+               </div>
+            )}
+
+            {movie.poster_path && (
+               <>
+                  <div
+                     className="w-full h-full flex items-center justify-center"
+                     style={{
+                        display: `${
+                           movie.poster_path && !images.includes(`https://image.tmdb.org/t/p/w500/${movie.poster_path}`)
+                              ? 'flex'
+                              : 'none'
+                        }`,
+                     }}
+                  >
+                     <Loading size={20} color="#27272a" />
+                  </div>
+                  <img
+                     style={{
+                        display: `${
+                           images.includes(`https://image.tmdb.org/t/p/w500/${movie.poster_path}`) ? 'block' : 'none'
+                        }`,
+                     }}
+                     src={movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : ''}
+                     alt={`${movie.title}`}
+                     className="w-full object-fill object-center h-full hover:scale-105 duration-200"
+                     onLoad={() => handleLoadImages(`https://image.tmdb.org/t/p/w500/${movie.poster_path}`)}
+                  />
+               </>
+            )}
          </div>
 
          <h2 className="font-normal text-xl text-zinc-400 group-hover:text-zinc-100 text-center my-2 duration-200">

@@ -6,6 +6,8 @@ import { Home } from '../pages/home';
 import { Detail } from '../pages/detail';
 import { Search } from '../pages/search';
 
+import { Notfound } from '../pages/not-found';
+
 export const router = createBrowserRouter([
    {
       element: <Layout />,
@@ -23,5 +25,9 @@ export const router = createBrowserRouter([
             path: '/search',
          },
       ],
+   },
+   {
+      element: <Notfound />,
+      path: '*',
    },
 ]);

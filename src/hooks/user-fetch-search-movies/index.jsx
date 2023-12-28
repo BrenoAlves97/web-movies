@@ -14,10 +14,8 @@ export const UserSearchMovies = (movie, config) => {
             const res = await fetch(`${search}?query=${movie}&api_key=${key}&language=pt_br`, config);
             if (!res.ok) return;
             const json = await res.json();
-            console.log(json);
             setData(json.results);
          } catch (error) {
-            console.log(error);
             setData(null);
          } finally {
             setLoading(false);

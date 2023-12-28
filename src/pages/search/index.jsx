@@ -30,10 +30,10 @@ export const Search = () => {
    if (data.length === 0 && !loading)
       return (
          <Container hScreen={true} placeCenter={true}>
-            <div className="flex flex-col gap-4 justify-center items-center">
-               <div className="flex gap-2 items-center">
-                  <Binary size={50} color="#eab308" />
-                  <p className="text-zinc-200 font-bold text-3xl">Ops... Nenhum filme encontrado!</p>
+            <div className="flex flex-col gap-6 justify-center items-center">
+               <div className="flex gap-2 items-center justify-center text-center">
+                  <Binary size={50} color="#eab308" className="hidden sm:block" />
+                  <p className="text-zinc-200 font-bold text-2xl md:text-3xl">Ops! Nenhum filme encontrado...</p>
                </div>
                <Link to="/" className="text-zinc-50 font-medium text-base hover:text-yellow-400 duration-200 ">
                   Página inicial
