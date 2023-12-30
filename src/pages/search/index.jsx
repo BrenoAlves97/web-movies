@@ -44,6 +44,9 @@ export const Search = () => {
 
    return (
       <Container hScreen={true}>
+         <p className="text-zinc-300 mb-4 text-xl select-none">
+            Resultados para: <span className="text-yellow-500 font-bold">{movie}</span>
+         </p>
          <section className="grid justify-items-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-3">
             {!loading && data && data.map((item) => <Card key={item.id} movie={item} />)}
          </section>
