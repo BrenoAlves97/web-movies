@@ -1,5 +1,6 @@
 import React from 'react';
-import { Image, Trash2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Image, Trash2, Info, Youtube } from 'lucide-react';
 
 import { MovieContext } from '../../context/movie-context';
 
@@ -18,6 +19,11 @@ const limitText = (text) => {
 
 export const MyMovies = () => {
    const { movies, moviesLength, handleRemoveMovie } = React.useContext(MovieContext);
+   const navigate = useNavigate();
+
+   const handleNavigateDetails = (movieId) => {
+      navigate(`/detalhes/${movieId}`, { replace: true });
+   };
 
    return (
       <Container hScreen={true} placeCenter={moviesLength === 0}>
@@ -34,9 +40,9 @@ export const MyMovies = () => {
                {movies.map((movie) => (
                   <div
                      key={movie.id}
-                     className="flex gap-4 sm:items-center flex-col sm:flex-row relative p-2 bg-zinc-800 rounded-md border-2 border-transparent hover:border-zinc-700/20 duration-200 group"
+                     className="flex gap-4 sm:items-center flex-col sm:flex-row relative p-2 bg-zinc-800 rounded-md border-2 border-transparent hover:border-zinc-700/20 duration-200"
                   >
-                     <div className="flex gap-2 items-center overflow-hidden">
+                     <div className="flex gap-2 items-center justify-center sm:justify-start">
                         {movie.poster_path ? (
                            <img
                               className="w-16 h-16 rounded-full object-cover object-top"
@@ -48,17 +54,34 @@ export const MyMovies = () => {
                               <Image size={30} color="#71717a" />
                            </div>
                         )}
-                        <h2 className="text-zinc-300 text-base font-bold sm:text-xl group-hover:text-zinc-50 duration-200">
+                        <h2 className="text-zinc-300 text-base font-bold sm:text-xl hover:text-zinc-50 duration-200">
                            {limitText(movie.title)}
                         </h2>
                      </div>
 
-                     <button
-                        onClick={() => handleRemoveMovie(movie)}
-                        className="absolute -top-4 -right-2 sm:static sm:ml-auto p-2 rounded-full border-2 bg-zinc-700 border-transparent hover:border-zinc-300 group duration-200"
-                     >
-                        <Trash2 size={22} color="#d4d4d8" className="group-hover:scale-110 duration-200" />
-                     </button>
+                     <div className="flex items-center mt-2 sm:mt-0 gap-4 flex-1 justify-center sm:justify-end">
+                        <button
+                           onClick={() => handleNavigateDetails(movie.id)}
+                           className="p-2 rounded-full border-2 bg-zinc-700 border-transparent hover:border-zinc-300 group duration-200"
+                        >
+                           <Info size={18} color="#d4d4d8" className="group-hover:scale-110 duration-200" />
+                        </button>
+
+                        <a
+                           className="p-2 rounded-full border-2 bg-zinc-700 border-transparent hover:border-zinc-300 group duration-200"
+                           href={`https://www.youtube.com/results?search_query=${movie.title}+trailer`}
+                           target="_blank"
+                        >
+                           <Youtube size={18} color="#d4d4d8" className="group-hover:scale-110 duration-200" />
+                        </a>
+
+                        <button
+                           onClick={() => handleRemoveMovie(movie)}
+                           className=" p-2 rounded-full border-2 bg-zinc-700 border-transparent hover:border-zinc-300 group duration-200"
+                        >
+                           <Trash2 size={18} color="#d4d4d8" className="group-hover:scale-110 duration-200" />
+                        </button>
+                     </div>
                   </div>
                ))}
             </div>
