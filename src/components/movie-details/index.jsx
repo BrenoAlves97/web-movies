@@ -1,10 +1,14 @@
 import React from 'react';
-import { Star, Users, Coins, Image } from 'lucide-react';
+import { Star, Users, Coins, Image, PlusCircle } from 'lucide-react';
+
+import { MovieContext } from '../../context/movie-context';
 
 import { Loading } from '../utilities/loading';
 
 export const MovieDetails = ({ movie }) => {
    const [image, setImage] = React.useState('');
+
+   const { handleAddMovie } = React.useContext(MovieContext);
 
    const handleImageLoad = (url) => {
       setImage(url);
@@ -56,11 +60,18 @@ export const MovieDetails = ({ movie }) => {
             </>
          </div>
 
-         <div className="w-full mt-8 px-2 py-4 bg-zinc-900/30 rounded-md">
+         <div className="w-full mt-8 px-2 py-4 bg-zinc-900/30 rounded-md relative group">
             <h2 className="font-bold text-center text-2xl sm:text-3xl text-zinc-50 mb-1">{movie.title}</h2>
             <p className="mb-4 text-zinc-400 font-light text-center">{movie.tagline}</p>
 
-            <p className="font-medium text-zinc-200 text-center mb-6">{movie.overview}</p>
+            {movie.overview && <p className="font-medium text-zinc-200 text-center mb-6">{movie.overview}</p>}
+
+            <button
+               className="p-3 absolute group-hover:block hidden duration-200 cursor-pointer animate-fadeon -top-4 -right-4"
+               onClick={() => handleAddMovie(movie)}
+            >
+               <PlusCircle size={30} color="#d4d4d8" />
+            </button>
 
             <div className="">
                <p className="text-zinc-100 font-medium flex gap-4 flex-row items-center justify-center mb-6">
@@ -71,16 +82,20 @@ export const MovieDetails = ({ movie }) => {
                </p>
 
                <p className="text-zinc-200 font-medium flex flex-col gap-4 sm:flex-row justify-center items-center sm:justify-between">
-                  <span className="flex items-center gap-2">
-                     <Users size={20} color="#d4d4d8" />
-                     Popularidade:
-                     <span className="text-zinc-50 font-bold ml-1">{movie.popularity}</span>
-                  </span>
+                  {movie.popularity && (
+                     <span className="flex items-center gap-2">
+                        <Users size={20} color="#d4d4d8" />
+                        Popularidade:
+                        <span className="text-zinc-50 font-bold ml-1">{movie.popularity}</span>
+                     </span>
+                  )}
 
-                  <span className="flex items-center gap-2">
-                     <Coins color="#facc15" size={24} /> Receita:{' '}
-                     <span className="font-bold">{formatValue.format(movie.revenue)}</span>
-                  </span>
+                  {movie.revenue !== '' && (
+                     <span className="flex items-center gap-2">
+                        <Coins color="#facc15" size={24} /> Receita:{' '}
+                        <span className="font-bold">{formatValue.format(movie.revenue)}</span>
+                     </span>
+                  )}
                </p>
             </div>
 

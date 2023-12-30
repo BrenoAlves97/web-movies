@@ -6,6 +6,16 @@ export default {
          fontFamily: {
             sans: ['Poppins'],
          },
+         keyframes: {
+            fadeon: {
+               from: { opacity: '0' },
+               to: { opacity: '1' },
+            },
+         },
+      },
+
+      animation: {
+         fadeon: 'fadeon .2s ease-in forwards',
       },
    },
    plugins: [],
