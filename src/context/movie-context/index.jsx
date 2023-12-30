@@ -15,6 +15,8 @@ export const MovieContextProvider = ({ children }) => {
       localStorage.setItem('@movies', JSON.stringify(movies));
    }, [movies]);
 
+   const moviesLength = React.useMemo(() => movies.length);
+
    const handleAddMovie = (movie) => {
       const checkMovies = movies.find((item) => item.id === movie.id);
 
@@ -26,5 +28,15 @@ export const MovieContextProvider = ({ children }) => {
       }
    };
 
-   return <MovieContext.Provider value={{ movies, handleAddMovie }}>{children}</MovieContext.Provider>;
+   const handleRemoveMovie = (movie) => {
+      const updatedItems = movies.filter((m) => movie.id !== m.id);
+      setMovies(updatedItems);
+      return toast.success('Filme removido da lista...');
+   };
+
+   return (
+      <MovieContext.Provider value={{ movies, handleAddMovie, moviesLength, handleRemoveMovie }}>
+         {children}
+      </MovieContext.Provider>
+   );
 };

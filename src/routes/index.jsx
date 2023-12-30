@@ -5,6 +5,7 @@ import { Layout } from '../components/layout';
 import { Home } from '../pages/home';
 import { Detail } from '../pages/detail';
 import { Search } from '../pages/search';
+import { MyMovies } from '../pages/movies';
 
 import { Notfound } from '../pages/not-found';
 
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
          {
             element: <Search />,
             path: '/search',
+         },
+         {
+            element: <MyMovies />,
+            path: '/filmes',
          },
       ],
    },
